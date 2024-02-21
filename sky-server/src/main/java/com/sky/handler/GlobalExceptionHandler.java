@@ -15,8 +15,8 @@ public class GlobalExceptionHandler {
 
     /**
      * 捕获业务异常
-     * @param ex
-     * @return
+     * @param ex 捕获到的业务异常
+     * @return 给前端返回对应数据
      */
     @ExceptionHandler
     public Result exceptionHandler(BaseException ex){
