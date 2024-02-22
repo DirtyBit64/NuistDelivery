@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
 
     /**
      * 处理SQL异常
-     * @param ex 唯一约束异常对象
+     * @param ex 唯一性约束异常对象
      * @return
      */
     @ExceptionHandler
