@@ -150,7 +150,6 @@ public class EmployeeServiceImpl implements EmployeeService {
      * 编辑员工信息
      * @param employeeDTO
      */
-    @Override
     public void update(EmployeeDTO employeeDTO) {
         // 构建实体对象更新数据
         Employee employee = new Employee();
