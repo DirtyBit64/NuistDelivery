@@ -44,4 +44,15 @@
         </set>
         where id = #{id}
     </update>
+
+    <select id="pageQuery" resultType="Orders">
+        select * from orders
+        <where>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+        order by order_time desc
+    </select>
+
 </mapper>
