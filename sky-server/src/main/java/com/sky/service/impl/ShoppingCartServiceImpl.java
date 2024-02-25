@@ -106,16 +106,16 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         shoppingCart.setUserId(BaseContext.getCurrentId());
 
         List<ShoppingCart> list = shoppingCartMapper.list(shoppingCart);
-        ShoppingCart cart = list.get(0);
+        shoppingCart = list.get(0);
         // 判断商品数量
-        Integer number = cart.getNumber();
+        Integer number = shoppingCart.getNumber();
         if(number > 1){
             // 如果数量>1，数量减1
-            cart.setNumber(number - 1);
-            shoppingCartMapper.updateNumberById(cart);
+            shoppingCart.setNumber(number - 1);
+            shoppingCartMapper.updateNumberById(shoppingCart);
         }else{
             // 如果数量<=1，删除该条购物车记录
-            shoppingCartMapper.delete(shoppingCartDTO);
+            shoppingCartMapper.deleteById(shoppingCart.getId());
         }
     }
 }
